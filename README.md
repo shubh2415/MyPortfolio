@@ -1,6 +1,2 @@
 # MyPortfolio
 Portfolio
-
-#Video
-
-
