@@ -143,9 +143,30 @@
         </div>
     </footer>
 
+
+
+
+    <script>
+(function(){
+  // Agar URL me query string hai
+  if (!window.location.search) return;
+
+  // Agar query string me utm hai
+  if (window.location.search.indexOf('utm_') !== -1) {
+    // Thoda wait karo taaki Google Analytics UTM read kar le
+    setTimeout(function(){
+      var cleanURL = window.location.origin + window.location.pathname + window.location.hash;
+      window.history.replaceState({}, document.title, cleanURL);
+    }, 800); // 800ms wait (safe for GA4/Tag Manager)
+  }
+})();
+</script>
+
+    
 </body>
 
 </html>
+
 
 
 
